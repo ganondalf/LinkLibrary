@@ -55,4 +55,5 @@ group :development, :test do
   gem 'annotate', '~> 2.6.3'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'factory_girl_rails'
+  gem 'rails-erd'
 end
