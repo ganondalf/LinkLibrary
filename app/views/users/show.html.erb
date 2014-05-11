@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="six columns">
+    <h1>LinkLibrary</h1>
+  </div>
+
+  <div class="ten columns" id="nav">
+    <ul>
+      <li><a href='#'>Your Collections</a></li>
+      <li><a href='#'>About LinkLibrary</a></li>
+      <li><a href='#'>Contact Us</a></li>
+      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+    </ul>
+  </div>
+  <div class="sixteen columns" id="subnav">
+    <p>Hello, <strong><%= current_user.name %></strong>!</p>
+  </div>
+  <div class='sixteen columns' id='main_body'>
+    <div class='four columns' id='categories'>
+    </div>
+    <div class='four columns' id='libraries'>
+    </div>
+    <div class='four columns' id='links'>
+    </div>
+    <div class='four columns' id='annotations'>
+    </div>
+  </div
+
+
+</div> <!-- closes container class  -->
+
+
+
+<% if current_user %>
+
+  <% else %>
+    <button><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></button>
+  <% end %>

@@ -1,0 +1,42 @@
+.container {
+    margin-top: 20px;
+    background-color: red;
+}
+
+#welcomeLogin {
+  margin: 15% 25% 15% 25%;
+  border:2px solid;
+  border-radius:25px;
+  text-align: center;
+  font-family:
+
+}
+
+#nav {
+    margin: 18px 0 0 0;
+}
+
+#nav ul li {
+    display: inline;
+    margin: 0 30px 0 0;
+    margin-bottom: 130px;
+}
+
+#nav a {
+    text-decoration: none;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+#subnav {
+  margin: 0 auto;
+  background-color: white;
+  font-size: 18px;
+}
+
+#main_body {
+  margin: 0 auto;
+  background-color: yellow;
+}

@@ -1,13 +1,9 @@
-<h1>Welcome</h1>
-<button>Sign In with Google</button>
-<body>
- <script type="text/javascript">
-    (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-  </script>
-</body>
+<div class='container'>
+  <div class="twelve columns" class="offset-by-four" id="welcomeLogin">
+    <h1>Welcome to LinkLibrary</h1>
+      <button><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></button>
+      <button><%= link_to "" 'Create a new account' %>
+  </div>
+</div>
 
 

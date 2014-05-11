@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resources :welcome
+  resources :users
 
 
   # Example of regular route:
