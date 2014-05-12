@@ -1,0 +1,13 @@
+<%= form_tag("/users", method: "post", id: "login_form") do %>
+  <%= label_tag(:first_name) %>
+  <%= text_field_tag(:first_name) %>
+  <%= label_tag(:last_name) %>
+  <%= text_field_tag(:last_name) %>
+  <%= label_tag(:email) %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password) %>
+  <%= password_field_tag(:password) %>
+  <%= label_tag(:password_confirmation) %>
+  <%= password_field_tag(:password_confirmation) %>
+  <%= submit_tag("Submit") %>
+<% end %>

@@ -5,23 +5,27 @@
 
   <div class="ten columns" id="nav">
     <ul>
-      <li><a href='#'>Your Collections</a></li>
+      <li><%= link_to "Manage Your Collections", user_collections_path(@user.collections) %></li>
       <li><a href='#'>About LinkLibrary</a></li>
       <li><a href='#'>Contact Us</a></li>
       <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
     </ul>
   </div>
   <div class="sixteen columns" id="subnav">
-    <p>Hello, <strong><%= current_user.name %></strong>!</p>
+    <p>Hello, <strong><%= current_user.name || current_user.first_name %></strong>!</p>
   </div>
   <div class='sixteen columns' id='main_body'>
     <div class='four columns' id='categories'>
+      <%= render '/categories/table' %>
     </div>
-    <div class='four columns' id='libraries'>
+    <div class='four columns' id='collections'>
+      <%= render '/collections/table' %>
     </div>
     <div class='four columns' id='links'>
+      <%= render '/links/table' %>
     </div>
     <div class='four columns' id='annotations'>
+      <%= render '/annotations/table' %>
     </div>
   </div
 

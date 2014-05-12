@@ -10,56 +10,34 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
-  resources :welcome
-  resources :users
+  resources :welcome, only: [:show]
+  resources :users do
+    resources :collections
+  end
 
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
+
+#  Prefix Verb   URI Pattern                                    Controller#Action
+#                 root GET    /                                              welcome#index
+#                      GET    /auth/:provider/callback(.:format)             sessions#create
+#         auth_failure GET    /auth/failure(.:format)                        redirect(301, /)
+#              signout GET    /signout(.:format)                             sessions#destroy
+#             sessions POST   /sessions(.:format)                            sessions#create
+#              session DELETE /sessions/:id(.:format)                        sessions#destroy
+#              welcome GET    /welcome/:id(.:format)                         welcome#show
+#     user_collections GET    /users/:user_id/collections(.:format)          collections#index
+#                      POST   /users/:user_id/collections(.:format)          collections#create
+#  new_user_collection GET    /users/:user_id/collections/new(.:format)      collections#new
+# edit_user_collection GET    /users/:user_id/collections/:id/edit(.:format) collections#edit
+#      user_collection GET    /users/:user_id/collections/:id(.:format)      collections#show
+#                      PATCH  /users/:user_id/collections/:id(.:format)      collections#update
+#                      PUT    /users/:user_id/collections/:id(.:format)      collections#update
+#                      DELETE /users/:user_id/collections/:id(.:format)      collections#destroy
+#                users GET    /users(.:format)                               users#index
+#                      POST   /users(.:format)                               users#create
+#             new_user GET    /users/new(.:format)                           users#new
+#            edit_user GET    /users/:id/edit(.:format)                      users#edit
+#                 user GET    /users/:id(.:format)                           users#show
+#                      PATCH  /users/:id(.:format)                           users#update
+#                      PUT    /users/:id(.:format)                           users#update
+#                      DELETE /users/:id(.:format)                           users#destroy

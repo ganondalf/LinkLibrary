@@ -32,6 +32,7 @@
 
 #subnav {
   margin: 0 auto;
+  width: 960px;
   background-color: white;
   font-size: 18px;
 }
@@ -39,4 +40,23 @@
 #main_body {
   margin: 0 auto;
   background-color: yellow;
+  border:2px solid;
+  height: 500px;
+  width: 960px;
+}
+
+#categories {
+  border:2px solid;
+}
+
+#collections {
+  border:2px solid;
+}
+
+#links {
+  border:2px solid;
+}
+
+#annotations {
+  border:2px solid
 }

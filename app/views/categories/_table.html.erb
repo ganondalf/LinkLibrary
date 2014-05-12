@@ -1,0 +1,10 @@
+<table style="width:300px">
+<tr>
+  <th>Categories</th>
+</tr>
+<tr>
+  <% current_user.collections do |collection| %>
+  <td>collection.categories.name</td>
+  <% end %>
+</tr>
+</table>

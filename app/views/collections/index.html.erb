@@ -1,0 +1,13 @@
+<h1>Manage Your Collections</h1>
+
+<div id='newCollection'>
+  <h4>Add a New Collection</h4>
+    <%= form_for [@user, Collection.new,], :remote => true, :html => { :id => "newCollectionForm" } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'Enter Title Here' %>
+    <%= f.submit %>
+    <% end %>
+</div>
+<h4>Edit Your Current Collections</h4>
+<h4>Delete A Collection</h4>
+

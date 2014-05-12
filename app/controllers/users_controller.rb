@@ -9,9 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      render :json => { message: "Sign up successful!"}
+      # redirect_to "users/#{user.id}"
     else
-      render :new
+      render :json => { message: "Something went wrong! Please try again."}
     end
   end
 

@@ -2,7 +2,11 @@
   <div class="twelve columns" class="offset-by-four" id="welcomeLogin">
     <h1>Welcome to LinkLibrary</h1>
       <button><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></button>
-      <button><%= link_to "" 'Create a new account' %>
+      <button id='login_button'><%= link_to 'Create a new account', new_user_path %>
+
+    <div id='newUserFormDiv'>
+      <%=render 'users/form' %>
+    </div>
   </div>
 </div>
 
