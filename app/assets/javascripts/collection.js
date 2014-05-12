@@ -1,25 +1,27 @@
 var collectionIndex = {
   onReady: function(){
-    $("#newCollectionForm").hide();
-    $("#newCollection").click(collectionIndex.makeNewCollection);
+    $("#new_collection").hide();
+    $("#newCollection").click(collectionIndex.showCollection);
+    $("#new_collection").on("submit", collectionIndex.flashMessage);
   },
 
-  makeNewCollection: function(event){
-    $("#newCollectionForm").slideDown();
-    var name = $("#name").val();
-    $("newCollectionForm").on('submit', function(event){
-      $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        data: { collection: {
-                name: name}
-          }
-        }).done(function(response){
-          console.log(response);
-        })
-      })
-    },
+  showCollection: function(event){
+    $("#new_collection").slideDown();
+  },
+
+  flashMessage: function(event){
+    var newCollection = $("<%= j(render @collection) %>");
+    var newDiv = $("<div>").text("Collection added successfully!");
+    $("#collectionsDiv").append(newCollection);
+    $("#new_collection").prepend(newDiv);
+    setTimeout(function(){
+      $("#new_collection").slideUp();
+      $("#collection_name").val("");
+      $(newDiv).text(""); }, 1000);
+  }
 
 };
 
 $(document).ready(collectionIndex.onReady);
+
+

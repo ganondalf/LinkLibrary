@@ -5,7 +5,7 @@
 
   <div class="ten columns" id="nav">
     <ul>
-      <li><%= link_to "Manage Your Collections", user_collections_path(@user.collections) %></li>
+      <li><%= link_to "Manage Your Collections", user_collections_path(@user) %></li>
       <li><a href='#'>About LinkLibrary</a></li>
       <li><a href='#'>Contact Us</a></li>
       <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
@@ -15,18 +15,26 @@
     <p>Hello, <strong><%= current_user.name || current_user.first_name %></strong>!</p>
   </div>
   <div class='sixteen columns' id='main_body'>
-    <div class='four columns' id='categories'>
-      <%= render '/categories/table' %>
-    </div>
     <div class='four columns' id='collections'>
-      <%= render '/collections/table' %>
+      <div id="collectionsDiv">
+        <h3>Collections</h3>
+        <%= render @user.collections  %>
+      </div>
+    </div>
+    <div class='four columns' id='categories'>
+      <div id="categoriesDiv">
+        <h3>Categories</h3>
+      </div>
     </div>
     <div class='four columns' id='links'>
-      <%= render '/links/table' %>
+      <div id="categoriesDiv">
+        <h3>Links</h3>
+      </div>
     </div>
     <div class='four columns' id='annotations'>
-      <%= render '/annotations/table' %>
-    </div>
+      <div id="annotationsDiv">
+        <h3>Annotations</h3>
+      </div>
   </div
 
 

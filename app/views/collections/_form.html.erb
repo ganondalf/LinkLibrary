@@ -1,0 +1,7 @@
+<%= form_for [@user, Collection.new], :remote => true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: 'Enter Title Here' %>
+  <%= f.submit %>
+<% end %>
+
+

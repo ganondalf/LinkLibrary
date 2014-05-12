@@ -3,24 +3,24 @@ class CollectionsController < ApplicationController
     @user = User.find(current_user.id)
     @collection = Collection.new
   end
-  def new
 
+  def new
   end
 
   def create
     @collection = Collection.new(collection_params)
-
+    user = User.find(current_user.id)
+    user.collections << @collection
     if @collection.save
-      user = User.find(current_user.id)
-      user.collections << @collection
-      render :json => { message: "Sign up successful!"}
+      respond_to do |format|
+        format.js {}
+      end
     else
-      render :json => { message: "Something went wrong. Please try again"}
+      render :new
     end
   end
 
   private
-
   def collection_params
     params.require(:collection).permit(:name)
   end

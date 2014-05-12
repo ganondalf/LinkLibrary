@@ -7,12 +7,9 @@ class UsersController < ApplicationController
 
   # users_path - POST - /users(.:format)
   def create
-    @user = User.new(user_params)
-    if @user.save
-      render :json => { message: "Sign up successful!"}
-      # redirect_to "users/#{user.id}"
-    else
-      render :json => { message: "Something went wrong! Please try again."}
+    @user = User.create(user_params)
+    respond_to do |format|
+      format.js {}
     end
   end
 
