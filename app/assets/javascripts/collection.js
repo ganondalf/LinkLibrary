@@ -6,7 +6,6 @@ var collectionIndex = {
 
   makeNewCollection: function(event){
     $("#newCollectionForm").slideDown();
-
     var name = $("#name").val();
     $("newCollectionForm").on('submit', function(event){
       $.ajax({

@@ -9,7 +9,10 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new(collection_params)
+
     if @collection.save
+      user = User.find(current_user.id)
+      user.collections << @collection
       render :json => { message: "Sign up successful!"}
     else
       render :json => { message: "Something went wrong. Please try again"}

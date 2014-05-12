@@ -3,8 +3,8 @@
   <th>Collections</th>
 </tr>
 <tr>
-  <% current_user.collections do |collection| %>
-  <td>collection.name</td>
+  <% current_user.collections.each do |collection| %>
+  <td><%= collection.name %></td>
   <% end %>
 </tr>
 </table>
