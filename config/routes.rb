@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :collections
   end
+  resources :links
 
-  post '/importlinks' => 'links#create'
+  post '/importlinks' => 'links#create_remotely'
+  get '/bookmarklet/loader' => 'links#generatebookmark'
 
 end
 

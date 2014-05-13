@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :collections
-  has_many :annotations
+  has_many :annotations, dependent: :destroy
   has_many :links, through: :annotations
+
+  # before_create
+  #  # callback -- after .new before .save
 
   def self.from_omniauth(auth)
       user = User.new
@@ -14,5 +17,7 @@ class User < ActiveRecord::Base
         user.save!
       end
   end
+
+
 
 end

@@ -43,19 +43,33 @@
   border:2px solid;
   height: 500px;
   width: 960px;
+  text-align: center;
 }
 
-#categories {
+#new_link {
+  width:50%;
+  margin:0 auto;
+  text-align:center;
+}
+
+.userLinks {
+  border:2px solid;
+  width: 470px;
+}
+
+#addLinksDiv {
   border:2px solid;
 }
 
-#collections {
+#addedLinksDiv {
   border:2px solid;
 }
 
-#links {
+#linkLibrary {
   border:2px solid;
+  width: 470px;
 }
+
 
 #annotations {
   border:2px solid

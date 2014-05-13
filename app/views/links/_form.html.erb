@@ -1,0 +1,6 @@
+<%= form_for @link, :remote => true do |f| %>
+Title: <%= f.text_field :title%>
+Url: <%= f.text_field :url%>
+Notes:<%= f.text_field :annotations %>
+<%= f.submit  %>
+<% end %>

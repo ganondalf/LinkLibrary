@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   # user_path - GET - /users/:id(.:format)
   def show
     @user = User.find(params[:id])
+    @link = Link.new
   end
 
 private
