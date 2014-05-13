@@ -29,13 +29,16 @@
     <div class='four columns' id='links'>
       <div id="categoriesDiv">
         <h3>Links</h3>
+        <% current_user.links.each do |link| %>
+        <p> <%= link.url %> </p>
+        <% end %>
       </div>
     </div>
     <div class='four columns' id='annotations'>
       <div id="annotationsDiv">
         <h3>Annotations</h3>
       </div>
-  </div
+  </div>
 
 
 </div> <!-- closes container class  -->

@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20140511164220) do
     t.string   "title"
     t.string   "url"
     t.integer  "category_id"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

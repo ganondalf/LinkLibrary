@@ -1,0 +1,9 @@
+<div class="links" id="<%= dom_id(link) %>">
+  <ol>
+    <li><%=link.title %> </li><
+    <li><a href='<%= link.url %>'></a></li>
+    <div id="linkAnnotations">
+      <%= render @link.annotations %>
+    </div>
+  </ol>
+</div>

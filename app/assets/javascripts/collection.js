@@ -3,7 +3,7 @@ var collectionIndex = {
     $("#new_collection").hide();
     $("#newCollection").click(collectionIndex.showCollection);
     $("#new_collection").on("submit", collectionIndex.flashMessage);
-    collectionIndex.testButton();
+    // collectionIndex.testButton();
   },
 
   showCollection: function(event){
@@ -22,7 +22,7 @@ var collectionIndex = {
     },
 
   testButton: function(){
-      var annotations=prompt('Enter your annotations here:','options');
+      var linkAnnotations=prompt('Enter your annotations here:','options');
       var linkUrl=document.location.href;
       var linkTitle=document.title;
       $.ajax({
@@ -31,7 +31,8 @@ var collectionIndex = {
         dataType: 'json',
         data: {
           linkUrl: linkUrl,
-          linkTitle: linkTitle
+          linkTitle: linkTitle,
+          linkAnnotation: linkAnnotations
       }
     }).done(function(response){
         alert('Your link has been added');

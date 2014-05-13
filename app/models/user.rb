@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :collections
-  has_many :links
+  has_many :annotations
+  has_many :links, through: :annotations
 
   def self.from_omniauth(auth)
       user = User.new

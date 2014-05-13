@@ -1,4 +1,5 @@
 class Link < ActiveRecord::Base
   belongs_to :category
-  belongs_to :user
+  has_many :annotations
+  has_many :users, through: :annotations
 end

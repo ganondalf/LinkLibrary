@@ -8,7 +8,9 @@
 <h4>Delete A Collection</h4>
 
 <p><%current_user.links.each do |link| %>
-  <%= link.url %>: <%= link.title %>
+  <ul>
+    <li>Title:<%= link.title %> Url:<%= link.url %> Annotations: <%= link.annotations %> </li>
+  </ul>
   <% end %>
 </p>
 
