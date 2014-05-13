@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :collections
   end
 
+  post '/importlinks' => 'links#create'
+
 end
 
 #  Prefix Verb   URI Pattern                                    Controller#Action

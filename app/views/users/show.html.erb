@@ -11,7 +11,7 @@
       <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
     </ul>
   </div>
-  <div class="sixteen columns" id="subnav">
+  <div class="sixteen columns" id="subnav" class='<%= current_user.id %>'>
     <p>Hello, <strong><%= current_user.name || current_user.first_name %></strong>!</p>
   </div>
   <div class='sixteen columns' id='main_body'>
