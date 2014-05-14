@@ -3,9 +3,7 @@ class User < ActiveRecord::Base
   has_many :annotations, dependent: :destroy
   has_many :links, through: :annotations
 
-  validates :email, uniqueness: true, case_sensitive: false
-  validates :password, length: { in: 3..20 }
-  has_secure_password
+  # has_secure_password
   # before_create
   #  # callback -- after .new before .save
 
