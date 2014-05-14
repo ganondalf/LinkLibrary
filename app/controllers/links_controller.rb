@@ -29,10 +29,6 @@ class LinksController < ApplicationController
     render json: { :response => @link }
   end
 
-  def generate_bookmarklet
-    render file: "/path/to/rails/app/assets/javascripts/booklet.js.erb"
-  end
-
   private
 
   def enable_cross_origin_requests

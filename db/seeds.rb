@@ -7,11 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-cat= Category.create(name: "Welcome Collection");
-coll= Collection.create(name: "Basic Information");
-link=Link.create(name: "Getting Started!", url: "http://localhost:3000/gettingstarted", )
+cat= Category.create(name: "General");
+coll= Collection.create(name: "Getting Started");
+link=Link.create(name: "Learn the Basics", url: "/gettingstarted", )
+# link=Link.create(name: "Drag Me to Your Bookmark Bar", url: "/gettingstarted", )
 user=User.create(first_name: "Test", last_name: "Test", email: "test@test.com", password: "abc123", password_confirmation: "abc123")
-ann = Annotation.create(body: "Hello")
+ann = Annotation.create(body: "Click on this link to learn how to customize collections, create subcategories, and more!")
+
 
 user.collections << coll
 user.annotations << ann

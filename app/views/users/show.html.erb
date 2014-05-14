@@ -16,21 +16,29 @@
   </div>
 
   <div class='sixteen columns' id='main_body'>
-    <div class='eight columns' id='linkLibrary'>
-      <h3>View Your Link Libraries</h3>
-      <ul id="menu">
+    <section class='eight columns' class='optionMenu'>
+      <div id='linkLibrary'>
+        <h3>View Your Link Libraries</h3>
+          <ul id="menu">
             <%=render 'collections/menu' %>
-      <ul>
-    </div>
-    <div class='eight columns' class='userLinks'>
-      <div class='eight columns' id='addLinksDiv'>
-      <h3>Create New Link</h3>
-        <%= render 'links/form' %>
-      <div class= 'eight columns' id='addedLinksDiv'>
+          <ul>
+      </div>
+
+      <div id='addLinksDiv'>
+        <h3>Create New Link</h3>
+          <%= render 'links/form' %>
+      </div>
+
+      <div id='addedLinksDiv'>
         <h3>Recently Added Links</h3>
       </div>
-    </div>
-  </div>
+
+    </section>
+
+    <section class='eight columns' class='viewOptions'>
+      <div id='displayChoice'>
+      </div>
+    </section>
 </div> <!-- closes container class  -->
 
 

@@ -4,10 +4,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-
-      redirect_to("/users/#{user.id}")
+      redirect_to "/users/#{user.id}"
     else
-      render(:new)
+      render json: { message: 'Error! Please try again'}
     end
   end
 
