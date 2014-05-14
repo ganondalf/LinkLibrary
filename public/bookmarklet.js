@@ -19,7 +19,7 @@ getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',fun
       $.ajax({
         type: 'POST',
         url: 'https://sleepy-escarpment-8057.herokuapp.com/importlinks',
-        dataType: 'jsonp',
+        dataType: 'json',
         crossDomain: true,
         data: {
           linkUrl: linkUrl,
