@@ -26,7 +26,7 @@ class LinksController < ApplicationController
       })
     annotation.link = @link
 
-    render json: { :response => @link }
+    render json: { :message => @link }
   end
 
   private
@@ -41,7 +41,3 @@ class LinksController < ApplicationController
   end
 
 end
-
-# hard code which user is being modified
-# try add an auth token to each bookmark request
-# general
