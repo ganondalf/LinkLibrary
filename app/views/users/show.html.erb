@@ -11,8 +11,9 @@
       <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
     </ul>
   </div>
-  <div class="sixteen columns" id="subnav" class='<%= current_user.id %>'>
-    <p>Hello, <strong><%= current_user.name || current_user.first_name %></strong>!</p>
+  <div class="sixteen columns" id="subnav">
+    <p>Hello, <strong><%= @user.name || @user.first_name %></strong>!</p>
+    <div class="userBookmark" id='<%= @user.bookmark_token %>'></div>
   </div>
 
   <div class='sixteen columns' id='main_body'>
@@ -20,13 +21,13 @@
       <div id='linkLibrary'>
         <h3>View Your Link Libraries</h3>
           <ul id="menu">
-            <%=render 'collections/menu' %>
+            <%=render 'collections/menu', :user => @user %>
           <ul>
       </div>
 
       <div id='addLinksDiv'>
         <h3>Create New Link</h3>
-          <%= render 'links/form' %>
+          <%= render 'links/form', :user => @user %>
       </div>
 
       <div id='addedLinksDiv'>
@@ -70,3 +71,6 @@
         <h3>Annotations</h3>
       </div>
   </div> -->
+
+
+<div class="test" id="secrettoken"

@@ -1,5 +1,5 @@
 <li>
-  <% current_user.collections.each do |collection| %>
+  <% @user.collections.each do |collection| %>
   <a href="#"><%= collection.name %></a>
   <% if collection.categories %>
     <% collection.categories.each do |category|%>
