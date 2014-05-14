@@ -18,13 +18,14 @@ getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',fun
     var linkTitle=document.title;
       $.ajax({
         type: 'POST',
-        url: 'http://sleepy-escarpment-8057.herokuapp.com/importlinks',
+        url: 'https://sleepy-escarpment-8057.herokuapp.com/importlinks',
         dataType: 'jsonp',
         crossDomain: true,
         data: {
           linkUrl: linkUrl,
           linkTitle: linkTitle,
           linkAnnotation: linkAnnotation
+          // bookmarklet_token: bookmarklet_token
         }
       }).done(function(response){
           alert('Your link has been added');
@@ -32,7 +33,3 @@ getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',fun
 });
 
 
-[blocked] The page at 'https://developers.google.com/speed/libraries/devguide#jquery' was loaded over HTTPS, but ran insecure content from 'http://localhost.3000/bookmarklet/loader': this content should also be loaded over HTTPS.
-
-button:
-javascript:void((function()%7Bvar doc%3Ddocument.createElement(%27script%27)%3Bdoc.setAttribute(%27src%27,%27http://localhost.3000/bookmarklet.js%27)%3Bdoc.setAttribute(%27type%27,%27text/javascript%27)%3Bdocument.getElementsByTagName(%27head%27)%5B0%5D.appendChild(doc)%3B%7D)())%3B
