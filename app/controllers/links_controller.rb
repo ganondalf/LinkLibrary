@@ -15,6 +15,7 @@ class LinksController < ApplicationController
   end
 
   def create_remotely
+    puts 'made it successfully'
     user = User.find_by(bookmark_token: params[:bookmark_token])
 
     @link = user.links.create({
