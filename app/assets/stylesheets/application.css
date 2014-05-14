@@ -12,5 +12,5 @@
  *= require skeleton
  *= require base
  *= require main
- * require jquery.ui.menu
+ *= require jquery.ui.menu
  */
