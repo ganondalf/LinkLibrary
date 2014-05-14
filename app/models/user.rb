@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :annotations, dependent: :destroy
   has_many :links, through: :annotations
 
+  validates :email, uniqueness: true, case_sensitive: false
+  validates :password, length: { in: 3..20 }
+  has_secure_password
   # before_create
   #  # callback -- after .new before .save
 
@@ -14,8 +17,13 @@ class User < ActiveRecord::Base
         user.name = auth.info.name
         user.oauth_token = auth.credentials.token
         user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+        user.bookmark_token = User.bookmark_token
         user.save!
       end
+  end
+
+  def self.bookmark_token
+    return (0...50).map { ('a'..'z').to_a[rand(26)] }.join
   end
 
 

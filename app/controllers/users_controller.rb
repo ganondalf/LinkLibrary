@@ -7,9 +7,12 @@ class UsersController < ApplicationController
 
   # users_path - POST - /users(.:format)
   def create
-    @user = User.create(user_params)
-    respond_to do |format|
-      format.js {}
+    @user = User.new(user_params)
+    @user.bookmark_token = User.bookmark_token
+    if @user.save
+      redirect_to "/users/#{@user.id}"
+    else
+      render json: { message: 'error'}
     end
   end
 
@@ -55,7 +58,7 @@ private
       :last_name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
       )
   end
 end

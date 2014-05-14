@@ -1,15 +1,27 @@
-.container {
-    margin-top: 20px;
-    background-color: red;
+body {
+  background-color: #BDD3D3;
 }
 
-#welcomeLogin {
-  margin: 15% 25% 15% 25%;
-  border:2px solid;
-  border-radius:25px;
-  text-align: center;
-  font-family:
+.container {
+}
 
+.ui-menu {
+  width: 50%;
+
+}
+
+#welcome {
+  height: 500px;
+  margin-bottom: 300px;
+  text-align: center;
+}
+
+#welcome h1 {
+  margin-top: 70px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 100px;
+  line-height: 100px;
 }
 
 #nav {

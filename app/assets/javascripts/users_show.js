@@ -1,5 +1,6 @@
 var userShow = {
   onReady: function(){
+    $("#menu").menu();
     $("#new_link").hide();
     $("#addLinksDiv").click(userShow.showLinkForm)
     $('input[value="Create Link"]').on("click", userShow.flashMessage)
@@ -11,14 +12,36 @@ var userShow = {
   },
 
   flashMessage: function(event){
-    var newDiv = $("<div>").text("Link added successfully!");
-    $("#new_link").prepend(newDiv);
-    setTimeout(function(){
-      $("#new_link").slideUp();
-      $("#collection_name").val("");
-      $(newDiv).text("");
-    }, 1000);
-  },
+    var title = $("#link_title").val();
+    var url = $("#link_url").val();
+    var annotations = $("#link_annotations").val();
+    $.ajax({
+      url: '/links',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+            url: url,
+            title: title,
+            annotations: annotations
+            }
+      }).done(function(response){
+          var newDiv = $("<div>");
+          if(response.message === "success"){
+            newDiv.text("Link added successfully!");
+            $("#new_link").prepend(newDiv);
+            setTimeout(function(){
+              $("#new_link").slideUp();
+            }, 2000);
+          }else{
+            newDiv.text("Something went wrong! Please try again.");
+            $("#new_link").prepend(newDiv);
+          }
+      })
+      $("#link_title").empty();
+      $("#link_url").empty();
+      $("#link_annotations").empty();
+    }
+
 };
 
 $(document).ready(userShow.onReady)

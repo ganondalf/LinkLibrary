@@ -3,12 +3,15 @@ class LinksController < ApplicationController
   before_action :enable_cross_origin_requests
 
   def create
-    binding.pry
-    link = Link.new({
-      title: params[:title]
-      url: params[:url]
-      user_id: current_user.id
+    @link = Link.new({
+      title: params[:title],
+      url: params[:url],
       })
+    if @link.save
+      render json: { message: "success" }
+    else
+      render json: { message: "error" }
+    end
   end
 
   def create_remotely
