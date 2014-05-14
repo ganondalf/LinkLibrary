@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
   def index
     @user = User.new
-    if current_user
-      id = current_user.id
+    if session[:user_id]
+      id = session[:user_id]
       redirect_to "/users/#{id}"
     end
   end

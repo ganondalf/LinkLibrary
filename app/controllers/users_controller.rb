@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to "/users/#{@user.id}"
     else
-      render json: { message: 'error'}
+      render :new
     end
   end
 

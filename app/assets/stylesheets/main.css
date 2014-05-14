@@ -17,6 +17,18 @@ body {
   text-align: center;
 }
 
+.new_user {
+  width:50%;
+  margin:0 auto;
+  /*text-align: center;*/
+}
+
+.new_session {
+  width:50%;
+  margin:0 auto;
+  text-align:center;
+}
+
 #welcome h1 {
   margin-top: 70px;
   font-family: 'Raleway', sans-serif;
