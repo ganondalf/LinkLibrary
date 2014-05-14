@@ -7,12 +7,7 @@
 <h4>Edit Your Current Collections</h4>
 <h4>Delete A Collection</h4>
 
-<p><%current_user.links.each do |link| %>
-  <ul>
-    <li>Title:<%= link.title %> Url:<%= link.url %> Annotations: <%= link.annotations %> </li>
-  </ul>
-  <% end %>
-</p>
+<a href="javascript:void((function()%7Bvar doc%3Ddocument.createElement(%27script%27)%3Bdoc.setAttribute(%27src%27,%27https://sleepy-escarpment-8057.herokuapp.com/bookmarklet.js%27)%3Bdoc.setAttribute(%27type%27,%27text/javascript%27)%3Bdocument.getElementsByTagName(%27head%27)%5B0%5D.appendChild(doc)%3B%7D)())%3B">Drag Me!</a>
+
 
 <%= link_to "Homepage", user_path(@user.id) %>
-

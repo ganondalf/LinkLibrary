@@ -32,6 +32,13 @@
 
       <div id='addedLinksDiv'>
         <h3>Recently Added Links</h3>
+          <ul>
+            <% @user.links.each do |link|%>
+            <li>Title: <%= link.title %><br>
+                Url: <a href='<%= link.url %>'>
+                <% end %>
+            </li>
+          </ul>
       </div>
 
     </section>
@@ -71,6 +78,3 @@
         <h3>Annotations</h3>
       </div>
   </div> -->
-
-
-<div class="test" id="secrettoken"
