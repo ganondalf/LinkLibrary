@@ -15,15 +15,15 @@ class LinksController < ApplicationController
   end
 
   def create_remotely
-    # user = user.find_by(bookmarklet_token: params[:token])
+    user = User.find_by(bookmark_token: params[:bookmark_token])
 
-    @link = User.find(1).links.create({
+    @link = user.links.create({
       url: params[:linkUrl],
       title: params[:linkTitle]
-    })
-    annotation = User.find(1).annotations.create({
+      })
+    annotation = user.annotations.create({
       body: params[:linkAnnotation]
-    })
+      })
     annotation.link = @link
 
     render json: { :response => @link }

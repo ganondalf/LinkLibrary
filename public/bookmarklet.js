@@ -24,8 +24,8 @@ getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',fun
         data: {
           linkUrl: linkUrl,
           linkTitle: linkTitle,
-          linkAnnotation: linkAnnotation
-          // bookmarklet_token: bookmarklet_token
+          linkAnnotation: linkAnnotation,
+          bookmark_token: bookmark_token
         }
       }).done(function(response){
           alert('Your link has been added');

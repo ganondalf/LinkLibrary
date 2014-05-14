@@ -58,14 +58,15 @@ ActiveRecord::Schema.define(version: 20140514055834) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.boolean  "admin",            default: false
+    t.boolean  "admin",                 default: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
     t.string   "bookmark_token"
+    t.string   "password"
+    t.string   "password_confirmation"
   end
 
 end

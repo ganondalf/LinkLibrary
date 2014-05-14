@@ -61,4 +61,3 @@ gem 'rails_12factor'
 gem 'httparty'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
 
-ruby '2.0.0'
