@@ -12,7 +12,7 @@ function getScript(url,success){
   };
   head.appendChild(script);
 };
-getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',function(){
+getScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',function(){
     var linkAnnotation=prompt('Enter annotation:');
     var linkUrl=document.location.href;
     var linkTitle=document.title;
