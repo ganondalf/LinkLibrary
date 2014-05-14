@@ -51,10 +51,12 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'jasmine'
-  gem 'httparty'
-  gem 'omniauth-google-oauth2', '~> 0.2.1'
   gem 'annotate', '~> 2.6.3'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'factory_girl_rails'
   gem 'rails-erd'
 end
+
+gem 'rails_12factor'
+gem 'httparty'
+gem 'omniauth-google-oauth2', '~> 0.2.1'
