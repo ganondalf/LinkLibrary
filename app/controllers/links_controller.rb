@@ -36,7 +36,7 @@ class LinksController < ApplicationController
     @annotation = user.annotations.create({
       body: params[:linkAnnotation]
       })
-    annotation.link = @link
+    @annotation.link = @link
     render json: { title: @link.title, url: @link.url, annotation: @annotation.body, collection: @collection.title }
   end
 
