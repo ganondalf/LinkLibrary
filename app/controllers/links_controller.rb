@@ -37,7 +37,7 @@ class LinksController < ApplicationController
       body: params[:linkAnnotation]
       })
     @annotation.link = @link
-    render json: { title: @link.title, url: @link.url, annotation: @annotation.body, collection: @collection.title }
+    render json: { title: @link.title, url: @link.url, annotation: @annotation.body, collection: @collection.name }
   end
 
   def userbookmark
