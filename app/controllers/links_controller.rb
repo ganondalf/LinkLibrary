@@ -25,7 +25,7 @@ class LinksController < ApplicationController
       category = @collection.categories.create(name: "All")
       user.collections << @collection
     else
-      @collection = user.collection.find_by(name: "Created Remotely")
+      @collection = user.collections.find_by(name: "Created Remotely")
       category = @collection.categories.find_by(name: "All")
     end
 
