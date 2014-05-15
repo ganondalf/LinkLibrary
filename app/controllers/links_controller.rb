@@ -34,8 +34,8 @@ class LinksController < ApplicationController
   end
 
   def userbookmark
-    @token = User.find_by(bookmark_token: params[:id])
-    render '/public/bookmarklet.js.erb'
+    @token = params["id"]
+    render 'bookmarklet.js.erb'
   end
 
 
