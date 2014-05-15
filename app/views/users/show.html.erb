@@ -27,13 +27,9 @@
 
       <div id='addedLinksDiv'>
         <h3>Recently Added Links</h3>
-          <ul>
-            <li>
-              <% @user.links.each do |link|%>
-              Title: <a href='<%= link.url %>'><%= link.title %></a>
-              <% end %>
-            </li>
-          </ul>
+          <ul> <% @user.links.each do |link|%>
+            <li>Title: <a href='<%= link.url %>'><%= link.title %></a></li>
+          </ul> <% end %>
       </div>
 
     </section>
