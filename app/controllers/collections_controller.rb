@@ -8,10 +8,11 @@ class CollectionsController < ApplicationController
   end
 
   def create
+    user = User.find(params[:user_id])
     @collection = Collection.new(collection_params)
-    user = User.find(current_user.id)
-    user.collections << @collection
     if @collection.save
+      category = @collection.categories.create(name: "General")
+      user.collections << @collection
       respond_to do |format|
         format.js {}
       end

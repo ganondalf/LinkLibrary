@@ -5,8 +5,8 @@
 
   <div class="ten columns" id="nav">
     <ul>
-      <li><%= link_to "Manage Your Collections", user_collections_path(@user) %></li>
-      <li><a href='#'>About LinkLibrary</a></li>
+      <li><%= link_to "Manage Your Libraries", user_collections_path(@user) %></li>
+      <li><a href='/getting started'>Getting Started</a></li>
       <li><a href='#'>Contact Us</a></li>
       <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
     </ul>
@@ -40,7 +40,7 @@
 
     <section class='eight columns' class='viewOptions'>
       <div id='displayChoice'>
-        <ul id="menu">
+        <ul class="menu">
           <%=render 'collections/menu', :user => @user %>
         </ul>
           <%= render 'links/form', :user => @user %>

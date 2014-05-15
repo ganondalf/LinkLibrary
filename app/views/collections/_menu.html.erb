@@ -1,12 +1,19 @@
-<li>
-  <% @user.collections.each do |collection| %>
-  <a href="#"><%= collection.name %></a>
-  <% if collection.categories %>
-    <% collection.categories.each do |category|%>
-    <ul id="menu" class="menuCategory">
-      <li> <%= category.name %></li>
-    </ul>
+<% @user.collections.each do |collection| %>
+  <li>
+    <a href="#"><%= collection.name %></a>
+    <ul>
+      <% collection.categories.each do |category|%>
+      <li>
+        <a href="#"><%= category.name %></a>
+        <ul>
+          <% if category.links %>
+          <% category.links.each do |link| %>
+          <li><a href="#">Title:</a><a href='<%= link.url %>'><%= link.title %></a></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </li>
       <% end %>
+    </ul>
     <% end %>
-  <% end %>
-<li>
+  </li>

@@ -3,7 +3,6 @@ var collectionIndex = {
     $("#new_collection").hide();
     $("#newCollection").click(collectionIndex.showCollection);
     $("#new_collection").on("submit", collectionIndex.flashMessage);
-    // collectionIndex.testButton();
   },
 
   showCollection: function(event){
@@ -20,26 +19,6 @@ var collectionIndex = {
         $("#collection_name").val("");
         $(newDiv).text(""); }, 1000);
     },
-
-  testButton: function(){
-      var linkAnnotations=prompt('Enter your annotations here:','options');
-      var linkUrl=document.location.href;
-      var linkTitle=document.title;
-      $.ajax({
-        type: 'POST',
-        url: 'http://localhost:3000/importlinks',
-        dataType: 'json',
-        data: {
-          linkUrl: linkUrl,
-          linkTitle: linkTitle,
-          linkAnnotation: linkAnnotations
-      }
-    }).done(function(response){
-        alert('Your link has been added');
-
-    })
-  },
-
 };
 
 $(document).ready(collectionIndex.onReady);
