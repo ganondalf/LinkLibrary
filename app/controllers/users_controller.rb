@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.bookmark_token = User.bookmark_token
+    @user.collections << Collection.default_collection
     if @user.save
       redirect_to "/users/#{@user.id}"
     else

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :welcome, only: [:show]
+  resources :welcome, only: [:index, :show]
   resources :users do
     resources :collections
   end
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   post '/importlinks' => 'links#create_remotely'
   get '/bookmarklets/:id' =>'links#userbookmark'
+  get 'gettingstarted' => 'welcome#show'
 
 end
 

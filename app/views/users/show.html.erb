@@ -30,7 +30,7 @@
           <ul>
             <li>
               <% @user.links.each do |link|%>
-              Title: <%= link.title %> Url: <a href='<%= link.url %>'>
+              Title: <a href='<%= link.url %>'><%= link.title %></a>
               <% end %>
             </li>
           </ul>
@@ -43,7 +43,7 @@
         <ul id="menu">
           <%=render 'collections/menu', :user => @user %>
         </ul>
-        <%= render 'links/form', :user => @user %>
+          <%= render 'links/form', :user => @user %>
       </div>
     </section>
   </div>
