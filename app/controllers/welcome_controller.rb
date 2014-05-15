@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
       redirect_to "/users/#{id}"
     end
   end
+
+  def show
+    @user = User.find(session[:user_id])
+  end
 end

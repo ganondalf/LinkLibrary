@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   post '/importlinks' => 'links#create_remotely'
   get '/bookmarklets/:id' =>'links#userbookmark'
-  get 'gettingstarted' => 'welcome#show'
+  get '/gettingstarted' => 'welcome#show'
 
 end
 
