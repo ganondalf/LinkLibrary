@@ -16,7 +16,7 @@ getScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',function
     var linkAnnotation=prompt('Enter annotation:');
     var linkUrl=document.location.href;
     var linkTitle=document.title;
-    var bookmark_token= <%= @token %>;
+    var bookmark_token= '<%= @token %>';
       $.ajax({
         type: 'POST',
         url: 'https://sleepy-escarpment-8057.herokuapp.com/importlinks',
