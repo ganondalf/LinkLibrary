@@ -1,6 +1,12 @@
 <h1>Getting Started with LinkLibrary</h1>
 
 <article>
-  <p>Welcome to LinkLibrary! With our site, you will be able to navigate the store
+  <p>Welcome to LinkLibrary! With our site, you will be able to navigate the internet, store links from other websites, and organize them in your LinkLibraries.</p>
 
-<a href="javascript:void((function()%7Bvar doc%3Ddocument.createElement(%27script%27)%3Bdoc.setAttribute(%27src%27,%27https://sleepy-escarpment-8057.herokuapp.com/bookmarklets/<%= @user.bookmark_token %>%27)%3Bdoc.setAttribute(%27type%27,%27text/javascript%27)%3Bdocument.getElementsByTagName(%27head%27)%5B0%5D.appendChild(doc)%3B%7D)())%3B">Drag Me!</a>
+  <p>There are two ways to add links to your LinkLibrary account:
+    <ul>
+      <li>From your homepage:<br>Click "Create a Link". Copy and paste the url from the site you would like to add to your library, enter an annotation, designated the new link's library and category.</li>
+      <li>Remotely:<br>Drag this button into your bookmark bar:<button><a href="javascript:void((function()%7Bvar doc%3Ddocument.createElement(%27script%27)%3Bdoc.setAttribute(%27src%27,%27https://sleepy-escarpment-8057.herokuapp.com/bookmarklets/<%= @user.bookmark_token %>%27)%3Bdoc.setAttribute(%27type%27,%27text/javascript%27)%3Bdocument.getElementsByTagName(%27head%27)%5B0%5D.appendChild(doc)%3B%7D)())%3B">LinkLibrary</a></button>When you click on the link, you will be prompted to enter an annotation that you would like to save along with your link.</li>
+    </ul>
+
+
