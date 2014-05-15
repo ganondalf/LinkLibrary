@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   def index
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
     @collection = Collection.new
   end
 

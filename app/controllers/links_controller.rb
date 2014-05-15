@@ -2,6 +2,9 @@ class LinksController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :enable_cross_origin_requests
 
+  def index
+  end
+
   def create
     @link = Link.new({
       title: params[:title],
@@ -29,6 +32,12 @@ class LinksController < ApplicationController
 
     render json: { :message => @link }
   end
+
+  def userbookmark
+    @token = User.find_by(bookmark_token: params[:id])
+    render '/public/bookmarklet.js.erb'
+  end
+
 
   private
 

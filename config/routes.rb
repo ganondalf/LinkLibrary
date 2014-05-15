@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :links
 
   post '/importlinks' => 'links#create_remotely'
+  get '/bookmarklets/:id' =>'links#userbookmark'
 
 end
 

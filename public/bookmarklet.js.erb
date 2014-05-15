@@ -1,4 +1,4 @@
-
+var
 function getScript(url,success){
   var head = document.getElementsByTagName("head")[0], done = false;
   var script = document.createElement("script");
@@ -12,11 +12,12 @@ function getScript(url,success){
   };
   head.appendChild(script);
 };
+
 getScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',function(){
     var linkAnnotation=prompt('Enter annotation:');
     var linkUrl=document.location.href;
     var linkTitle=document.title;
-    var bookmark_token=$("#subnav").attr('class');
+    var bookmark_token= <%= @token %>;
       $.ajax({
         type: 'POST',
         url: 'https://sleepy-escarpment-8057.herokuapp.com/importlinks',
