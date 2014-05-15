@@ -29,7 +29,14 @@ getScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',function
           bookmark_token: bookmark_token
         }
       }).done(function(response){
-          alert('Your link has been added');
+          var title = response.title;
+          var url = response.url;
+          var collection = response.collection;
+          var annotation = response.annotation;
+          alert('The following entry has been added to the "' + collection + '" library in your LinkLibrary account:
+                Title: "' + title + '",
+                Url: "' + url + '",
+                Annotation: "' + annotation + '"');
       });
 });
 

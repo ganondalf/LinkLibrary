@@ -18,10 +18,18 @@ class LinksController < ApplicationController
   end
 
   def create_remotely
-    puts 'made it successfully'
     user = User.find_by(bookmark_token: params[:bookmark_token])
 
-    @link = user.links.create({
+    if !user.collections.find_by(name: "Created Remotely")
+      @collection = Collection.create(name: "Created Remotely")
+      category = @collection.categories.create(name: "All")
+      user.collections << @collection
+    else
+      @collection = user.collection.find_by(name: "Created Remotely")
+      category = @collection.categories.find_by(name: "All")
+    end
+
+    @link = category.links.create({
       url: params[:linkUrl],
       title: params[:linkTitle]
       })
@@ -29,8 +37,7 @@ class LinksController < ApplicationController
       body: params[:linkAnnotation]
       })
     annotation.link = @link
-
-    render json: { :message => @link }
+    render json: { title: @link.title, url: @link.url, annotation: @link.annotation, collection: @collection.title }
   end
 
   def userbookmark
