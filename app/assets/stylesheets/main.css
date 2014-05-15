@@ -63,7 +63,6 @@ body {
 
 #main_body {
   margin: 0 auto;
-  background-color: yellow;
   border:2px solid;
   height: 500px;
   width: 960px;
@@ -89,12 +88,13 @@ body {
   border:2px solid;
 }
 
+.optionMenu div {
+   border:2px solid;
+  height: 500px;
+}
+
 #linkLibrary {
   border:2px solid;
   width: 470px;
 }
 
-
-#annotations {
-  border:2px solid
-}

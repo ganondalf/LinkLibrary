@@ -1,7 +1,8 @@
 var userShow = {
   onReady: function(){
-    $("#menu").menu();
+    $("#menu").menu().hide();
     $("#new_link").hide();
+    $("#linkLibary").click(userShow.showLinkMenu);
     $("#addLinksDiv").click(userShow.showLinkForm)
     $('input[value="Create Link"]').on("click", userShow.flashMessage)
   },
@@ -40,6 +41,11 @@ var userShow = {
       $("#link_title").empty();
       $("#link_url").empty();
       $("#link_annotations").empty();
+    },
+
+    showLinkMenu: function(event){
+      $("#menu").slideDown();
+
     }
 
 };
