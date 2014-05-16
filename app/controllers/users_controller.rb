@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       category.links << link
       collection.categories << category
       @user.collections << collection
+      session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
       render :new
