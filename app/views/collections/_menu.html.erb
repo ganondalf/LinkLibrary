@@ -3,17 +3,17 @@
     <a href="#"><%= collection.name %></a>
     <ul>
       <% collection.categories.each do |category|%>
-      <li>
-        <a href="#"><%= category.name %></a>
-        <ul>
-          <% if category.links %>
-          <% category.links.each do |link| %>
-          <li><a href="#">Title:</a><a href='<%= link.url %>'><%= link.title %></a></li>
-          <% end %>
-        </ul>
-        <% end %>
-      </li>
+        <li>
+          <a href="#"><%= category.name %></a>
+          <ul>
+            <% if category.links %>
+              <% category.links.each do |link| %>
+                <li><a href="#">Title:</a><a href='<%= link.url %>'><%= link.title %></a></li>
+              <% end %>
+            <% end %>
+          </ul>
+        </li>
       <% end %>
     </ul>
-    <% end %>
   </li>
+<% end %>

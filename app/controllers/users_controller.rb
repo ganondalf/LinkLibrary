@@ -9,9 +9,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.bookmark_token = User.bookmark_token
-    @user.collections << Collection.default_collection
+    collection = Collection.first_default
+    category = Category.first_default
+    link = Link.first_default
+    annotation = Annotation.first_default
     if @user.save
+      @user.annotations << annotation
+      link.annotations << annotation
+      category.links << link
+      collection.categories << category
+      @user.collections << collection
       redirect_to "/users/#{@user.id}"
+      binding.pry
     else
       render :new
     end
