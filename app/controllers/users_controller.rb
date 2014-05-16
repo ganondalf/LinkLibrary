@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       collection.categories << category
       @user.collections << collection
       redirect_to "/users/#{@user.id}"
-      binding.pry
     else
       render :new
     end

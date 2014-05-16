@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
         user.oauth_token = auth.credentials.token
         user.oauth_expires_at = Time.at(auth.credentials.expires_at)
         user.bookmark_token = User.bookmark_token
-        user.collections << Collection.default_collection
+
         user.save!
       end
   end
